@@ -14,7 +14,10 @@
     "esm": "cp index.js esm/index.js; echo 'export default Flatted;' >> esm/index.js; echo 'export const parse = Flatted.parse;' >> esm/index.js; echo 'export const stringify = Flatted.stringify;' >> esm/index.js",
     "min": "echo '/*! (c) 2018, Andrea Giammarchi, (ISC) */'>min.js && uglifyjs index.js --support-ie8 -c -m >> min.js",
     "size": "cat index.js | wc -c;cat min.js | wc -c;gzip -c9 min.js | wc -c;cat min.js | brotli | wc -c",
-    "test": "istanbul cover test/index.js"
+		"test": "istanbul cover test/index.js",
+		"commit": "git add . ; git commit -m 'did I do that?'",
+		"push": "npm run commit ; git push origin dev",
+		"pull" : "git pull origin dev"
   },
   "repository": {
     "type": "git",
